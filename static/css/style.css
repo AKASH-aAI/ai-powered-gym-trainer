@@ -1,0 +1,782 @@
+/* static/css/style.css */
+
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 50%, #ffffff 100%);
+    color: #1e293b;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Light anime-inspired silhouette background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M500,100 C600,150 700,250 700,400 C700,550 600,650 500,700 C400,650 300,550 300,400 C300,250 400,150 500,100 Z" fill="none" stroke="rgba(59,130,246,0.06)" stroke-width="2"/><path d="M500,200 C580,250 650,330 650,450 C650,570 580,620 500,650 C420,620 350,570 350,450 C350,330 420,250 500,200 Z" fill="none" stroke="rgba(139,92,246,0.04)" stroke-width="2"/><path d="M450,350 L550,350 L550,550 L450,550 Z" fill="none" stroke="rgba(59,130,246,0.03)" stroke-width="2"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f0fe 100%);
+    border-bottom: 1px solid rgba(59,130,246,0.15);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(59,130,246,0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 4rem 2rem;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(59,130,246,0.08);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(59,130,246,0.2);
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #3b82f6;
+}
+
+.hero-badge i {
+    color: #3b82f6;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #1e293b 0%, #3b82f6 50%, #6366f1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #475569;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1e293b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.stat i {
+    color: #3b82f6;
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+
+.container {
+    max-width: 1400px;
+    margin: -50px auto 0;
+    padding: 0 2rem 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* ========================================
+   GLASS CARD (FORM)
+   ======================================== */
+
+.glass-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    border: 1px solid rgba(59,130,246,0.15);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(59,130,246,0.3);
+    box-shadow: 0 8px 32px rgba(59,130,246,0.08);
+}
+
+.form-card {
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.card-header i {
+    font-size: 3rem;
+    color: #3b82f6;
+    margin-bottom: 1rem;
+}
+
+.card-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #1e293b, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.card-header p {
+    color: #64748b;
+}
+
+/* ========================================
+   FORM STYLES
+   ======================================== */
+
+.workout-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.input-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #334155;
+}
+
+.input-group label i {
+    color: #3b82f6;
+    font-size: 1rem;
+}
+
+.input-group input,
+.input-group select {
+    background: white;
+    border: 1px solid #e2e8f0;
+    padding: 12px 16px;
+    border-radius: 12px;
+    color: #1e293b;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+    background: white;
+}
+
+.input-group input:hover,
+.input-group select:hover {
+    border-color: #93c5fd;
+}
+
+.input-hint {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+/* ========================================
+   GENERATE BUTTON
+   ======================================== */
+
+.generate-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(59,130,246,0.2);
+}
+
+.generate-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.generate-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59,130,246,0.3);
+}
+
+.generate-btn:active {
+    transform: translateY(0);
+}
+
+.generate-btn i {
+    font-size: 1.2rem;
+}
+
+/* ========================================
+   WORKOUT RESULTS SECTION
+   ======================================== */
+
+.workout-container {
+    margin-top: 2rem;
+}
+
+.results-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.5s ease;
+}
+
+.results-header-content i {
+    font-size: 3rem;
+    color: #10b981;
+    margin-bottom: 1rem;
+}
+
+.results-header-content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+}
+
+.results-header-content p {
+    color: #64748b;
+}
+
+.workouts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* ========================================
+   WORKOUT CARDS
+   ======================================== */
+
+.workout-card {
+    background: white;
+    backdrop-filter: blur(0);
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.workout-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(59,130,246,0.03), rgba(99,102,241,0.03));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.workout-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(59,130,246,0.3);
+    box-shadow: 0 20px 40px rgba(59,130,246,0.1);
+}
+
+.workout-card:hover::before {
+    opacity: 1;
+}
+
+.workout-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+.workout-image img {
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    background: #f8fafc;
+    padding: 10px;
+    transition: transform 0.4s ease;
+}
+
+.workout-card:hover .workout-image img {
+    transform: scale(1.1);
+}
+
+.workout-number {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.workout-content {
+    padding: 1.5rem;
+}
+
+.workout-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.workout-name i {
+    color: #3b82f6;
+}
+
+.workout-details {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    background: rgba(59,130,246,0.08);
+    border-radius: 20px;
+    color: #475569;
+}
+
+.detail-item i {
+    color: #3b82f6;
+    font-size: 0.8rem;
+}
+
+/* ========================================
+   TIMER BUTTON
+   ======================================== */
+
+.timer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.timer-btn {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(59,130,246,0.15);
+}
+
+.timer-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(59,130,246,0.25);
+}
+
+.timer-btn:active {
+    transform: translateY(0);
+}
+
+.timer-display {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: monospace;
+    padding: 5px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    color: #3b82f6;
+}
+
+/* ========================================
+   EMPTY & LOADING STATES
+   ======================================== */
+
+.empty-state,
+.loading-state,
+.error-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    border: 1px solid rgba(59,130,246,0.15);
+}
+
+.empty-state i,
+.loading-state i,
+.error-state i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #3b82f6;
+}
+
+.loading-state i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.error-state i {
+    color: #ef4444;
+}
+
+.retry-btn {
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.workout-tip {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(59,130,246,0.06);
+    border-left: 3px solid #3b82f6;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #475569;
+}
+
+.workout-tip i {
+    color: #3b82f6;
+    font-size: 1.5rem;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.footer {
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(59,130,246,0.15);
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.footer-brand i {
+    color: #3b82f6;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: #64748b;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #3b82f6;
+}
+
+.footer-copyright {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.workout-card {
+    animation: fadeInUp 0.6s ease backwards;
+}
+
+.workout-card:nth-child(1) { animation-delay: 0.1s; }
+.workout-card:nth-child(2) { animation-delay: 0.2s; }
+.workout-card:nth-child(3) { animation-delay: 0.3s; }
+.workout-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .container {
+        padding: 0 1rem 2rem;
+    }
+    
+    .form-card {
+        padding: 1.5rem;
+    }
+    
+    .card-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-stats {
+        gap: 1rem;
+    }
+    
+    .stat {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    
+    .workouts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .results-header-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .workout-name {
+        font-size: 1.1rem;
+    }
+    
+    .hero {
+        min-height: 50vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat {
+        font-size: 0.7rem;
+    }
+    
+    .workout-tip {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ========================================
+   SCROLLBAR STYLING
+   ======================================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(59,130,246,0.15); }
+    50% { box-shadow: 0 0 30px rgba(59,130,246,0.25); }
+}
+
+.generate-btn:focus {
+    animation: glow 1.5s ease infinite;
+}
+
+input:focus, select:focus {
+    animation: glow 1.5s ease infinite;
+} 
