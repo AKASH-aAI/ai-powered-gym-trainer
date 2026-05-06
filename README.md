@@ -41,9 +41,7 @@ Users can:
 
 Deployed on Render:
 
-```bash
-https://ai-powered-gym-trainer-2.onrender.com
-```
+[Live Demo - AI Powered Gym Trainer](https://ai-powered-gym-trainer-2.onrender.com)
 
 ---
 
@@ -278,9 +276,7 @@ Planned features:
 
 The project is deployed live on Render:
 
-```bash
-https://ai-powered-gym-trainer-2.onrender.com
-```
+[Live Demo - AI Powered Gym Trainer](https://ai-powered-gym-trainer-2.onrender.com)
 
 You can directly try the AI-powered workout recommendation system online.
 
